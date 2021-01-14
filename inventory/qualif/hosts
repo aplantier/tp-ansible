@@ -1,25 +1,33 @@
-[group1:children]
-sophia
-#front
 
-[group2:children]
-bagnolet
-#database
-
-[group3:children]
-bagnolet
-
-[sophia]
+[sophiafront]
 front001.qualif.sophia.net
 front002.qualif.sophia.net
 front003.qualif.sophia.net
 
-[bagnolet]
+[bagnoletback]
 back001.qualif.bagnolet.net
 back002.qualif.bagnolet.net
 
+[bagnoletdata]
+database001.qualif.bagnolet.net
+database002.qualif.bagnolet.net
 
-#[front]
+[sophia:children]
+sophiafront
 
-#[back]
+[bagnolet:children]
+bagnoletback
+bagnoletdata
+
+[front:children]
+sophiafront
+[back]
+[database]
+
+
+
+
+
+
+
 
