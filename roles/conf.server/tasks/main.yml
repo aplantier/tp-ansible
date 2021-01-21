@@ -1,0 +1,11 @@
+---
+# tasks file for roles/conf.server
+- name: Print the host 
+  ansible.builtin.debug:
+    msg: Hostname {{inventory_hostname}}
+
+- name:  creation du fichier config du server et de son arborescence 
+  ansible.builtin.file:
+    path: /home/iut/servers/{{inventory_hostname}}/config_server
+    state: directory
+    mode: '1777'

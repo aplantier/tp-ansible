@@ -1,33 +1,52 @@
-
-[sophiafront]
-front001.qualif.sophia.net
-front002.qualif.sophia.net
-front003.qualif.sophia.net
-
-[bagnoletback]
-back001.qualif.bagnolet.net
-back002.qualif.bagnolet.net
-
-[bagnoletdata]
-database001.qualif.bagnolet.net
-database002.qualif.bagnolet.net
-
 [sophia:children]
-sophiafront
+  sophiafrontHost
 
 [bagnolet:children]
-bagnoletback
-bagnoletdata
-
+  bagnoletback
+  bagnoletdata
+  
 [front:children]
-sophiafront
-[back]
-[database]
+  sophiafrontHost
+
+[back:children]
+  bagnoletback
+
+[database:children]
+  bagnoletdata
+  montsourisdata
+
+[montsouris:children]
+  montsourisdata
 
 
 
+[sophiafrontHost:vars]
+  vlan=vlan_sophia_front
+
+[bagnoletback:vars]
+  vlan=vlan_bagnolet_back
+
+[bagnoletdata:vars]
+  vlan=vlan_bagnolet_database
+
+[bagnolet:vars]
+  monitoring_server=monitoring.bagnolet.net
+
+[front:vars]
+  front_common=front_all
 
 
 
+[sophiafrontHost]
+  front[001:003].qualif.sophia.net
 
+[bagnoletback]
+  back001.qualif.bagnolet.net back_dictionnary=[name=jessy-james,short_name=jj,kills=[martin,martine,josé]]
+  back002.qualif.bagnolet.net back_dictionnary=[name=billy-the-kid, short_name=btk,kills=[gandalf,saroumane]]
 
+[bagnoletdata]
+  database[001:002].qualif.bagnolet.net
+  
+[montsourisdata]
+  database003.qualif.montsouris.net
+  database004.qualif.montsouris.net
